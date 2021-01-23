@@ -43,12 +43,13 @@ request(
       //console.log(results);
     }
     console.log(array);
+
+    // A for loop that loops through the array starting at i = 0, and loops through the size of the array ".lenght"
     for (let i = 0; i < array.length; i++) {
       console.log(i);
       console.log(array[i]);
-      fs.writeFileSync(
-        `${__dirname}/memes/img_${i + 1}.jpg`,
-        array.toString('binary'),
+      request(`${array[i]}`).pipe(
+        fs.createWriteStream(`${__dirname}/memes/img_${i}.jpg`),
       );
     }
   },
