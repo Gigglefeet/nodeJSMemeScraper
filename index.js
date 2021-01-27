@@ -26,9 +26,9 @@ request(
     }
     // this is how the img tag is extracted to the variable re
     const re = /<img[^>]+src="([^">]+)"/g;
-    // A for loop that goes through the first 10 meme img tags, why it does that I have no Idea! but it does.
+    // A for loop that goes through the first 10 meme img tags.
     for (let i = 0; i < 10; i++) {
-      // This peace of code I don't understand yet
+      // This peace of code is taking the string that is generated from the URL: (line 32) and pushing it to an Array (line 33)
       const results = re.exec(res.body);
       array.push(results[1]);
     }
